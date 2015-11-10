@@ -5,14 +5,14 @@ from gopigo import *
 import time
 STOP_DIST = 50
 
-class Pigo:
+class Mater:
 
 
     #####
     ##### BASIC STATUS AND METHODS
     #####
 
-    status = {'ismoving' : false, 'servo' : 90, 'leftspeed' : 175,
+    status = {'ismoving' : False, 'servo' : 90, 'leftspeed' : 175,
               'rightspeed' : 175, 'dist': 100}
 
     def __init__(self):
