@@ -1,8 +1,14 @@
+### GOPIGO AUTONOMOUS SCRIPT
+### http://www.dexterindustries.com/GoPiGo/programming/python-programming-for-the-raspberry-pi-gopigo/
+
 from gopigo import *
 import time
 STOP_DIST = 50
 
 class Pigo:
+
+    def spin(selfself):
+        right_rot(360)
 
     #####
     ##### BASIC STATUS AND METHODS
@@ -27,8 +33,13 @@ class Pigo:
         for x in range(3):
             fwd()
 
-    def keepGoing(selfself):
+    # Check if the conditions are safe for the Pigo to continue
+    def keepGoing(self):
         if self.status['dist'] < STOP_DIST:
+            print "Obstacle within stop distance."
+            return False
+        elif volt() > 14 or volt() < 6:
+            print "Voltage outside of safe range." + str(volt())
             return False
         else:
             return True
@@ -38,7 +49,7 @@ class Pigo:
          print "I see something" + str(self.status['dist']) + "mm away."
     #####
     ##### COMPLEX METHODS
-    #####
+    #####s
 
         def dance(selfself):
             print "I just want to DANCE!"
