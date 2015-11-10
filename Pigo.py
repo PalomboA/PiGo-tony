@@ -3,7 +3,7 @@
 
 from gopigo import *
 import time
-STOP_DIST = 50
+STOP_DIST = 10
 
 class Mater:
 
