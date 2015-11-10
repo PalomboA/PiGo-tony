@@ -7,8 +7,6 @@ STOP_DIST = 50
 
 class Pigo:
 
-    def spin(selfself):
-        right_rot(360)
 
     #####
     ##### BASIC STATUS AND METHODS
@@ -44,21 +42,48 @@ class Pigo:
         else:
             return True
 
-    def checkDist(selfself):
+    def checkDist(self):
          self.status['dist'] = us_dist(15)
          print "I see something" + str(self.status['dist']) + "mm away."
     #####
     ##### COMPLEX METHODS
-    #####s
+    #####
+    def spin(self):
+        right_rot()
+        time.sleep(3)
+        self.stop()
 
-        def dance(selfself):
-            print "I just want to DANCE!"
-            self.spin()
-            self.shuffle()
-            self.shakeServo()
-            self.rturn()
-            self.lturn()
-            self.blink()
+    def shakeServo(self):
+        for x in range(10):
+            if x % 2 == 0:
+                servo(120)
+                time.sleep(.1)
+            else:
+                servo(20)
+                time.sleep(.1)
+
+    def shuffle(self):
+        motor_fwd()
+        time.sleep(1)
+        motor_bwd()
+        time.sleep(1)
+        motor_fwd()
+        time.sleep(1)
+        motor_bwd()
+        time.sleep(1)
+        self.stop()
+
+
+
+    def dance(self):
+        print "I just want to DANCE!"
+        self.spin()
+        self.shuffle()
+        self.shakeServo()
+        self.rturn()
+        self.lturn()
+        self.blink()
+
 
     #####
     ##### MAIN APP STARTS HERE
