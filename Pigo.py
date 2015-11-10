@@ -88,15 +88,15 @@ class Mater:
     #####
     ##### MAIN APP STARTS HERE
     #####
-Mater = Pigo()
+MaterPi = Mater()
 
-while Mater.keepGoing():
-    Mater.checkDist()
-    Mater.fwd()
-    if Mater.keepGoing() == False:
+while MaterPi.keepGoing():
+    MaterPi.checkDist()
+    MaterPi.fwd()
+    if MaterPi.keepGoing() == False:
         break
-    Mater.sleep(2)
-    Mater.stop()
+    MaterPi.sleep(2)
+    MaterPi.stop()
 
-Mater.stop()
+MaterPi.stop()
 
