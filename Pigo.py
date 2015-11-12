@@ -107,9 +107,8 @@ MaterPi = Pigo()
 while MaterPi.keepGoing():
     MaterPi.checkDist()
     MaterPi.fwd()
-    if MaterPi.keepGoing() == False:
-        break
-    MaterPi.sleep(2)
+    while MaterPi.keepGoing():
+        MaterPi.checkDist()
     MaterPi.stop()
 
 MaterPi.stop()
