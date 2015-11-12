@@ -109,7 +109,7 @@ MaterPi = Pigo()
 
 while MaterPi.keepGoing():
     MaterPi.checkDist()
-    MaterPi.fwd()
+    MaterPi.dance()
     while MaterPi.keepGoing():
         MaterPi.checkDist()
     MaterPi.stop()
