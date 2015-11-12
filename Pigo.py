@@ -5,15 +5,14 @@ from gopigo import *
 import time
 STOP_DIST = 10
 
-class Mater:
+class Pigo:
 
 
     #####
     ##### BASIC STATUS AND METHODS
     #####
 
-    status = {'ismoving' : False, 'servo' : 90, 'leftspeed' : 175,
-              'rightspeed' : 175, 'dist': 100}
+    status = dict(ismoving=False, servo=90, leftspeed=175, rightspeed=175, dist=10)
 
     def __init__(self):
         print "I'm a little robot car. Beep beep."
@@ -102,7 +101,7 @@ class Mater:
     #####
     ##### MAIN APP STARTS HERE
     #####
-MaterPi = Mater()
+MaterPi = Pigo()
 
 while MaterPi.keepGoing():
     MaterPi.checkDist()
