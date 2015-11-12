@@ -17,7 +17,7 @@ class Pigo:
 
     def __init__(self):
         print "I'm a little robot car. Beep beep."
-        self.status['dist'] = us_dist(15)
+        self.checkDist()
 
     def stop(self):
         self.status["ismoving"] = False
@@ -34,8 +34,11 @@ class Pigo:
     # Check if the conditions are safe for the Pigo to continue
     def keepGoing(self):
         if self.status['dist'] < STOP_DIST:
-            print "Obstacle within stop distance."
-            return False
+            print "I think I see something in the distance."
+            self.checkDist()
+            if self.status['dist'] < STOP_DIST:
+                print "Yep, there is for sure something big out there"
+                return False
         elif volt() > 14 or volt() < 6:
             print "Voltage outside of safe range." + str(volt())
             return False
