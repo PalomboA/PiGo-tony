@@ -73,7 +73,21 @@ class Mater:
         time.sleep(1)
         self.stop()
 
+    def rturn(self):
+        right()
 
+    def lturn(self):
+        left()
+
+    def blink(self):
+        for x in range(10):
+            if x % 2 == 0:
+                led_on()
+                time.sleep(.1)
+                led_off()
+            else:
+                servo(20)
+                time.sleep(.1)
 
     def dance(self):
         print "I just want to DANCE!"
