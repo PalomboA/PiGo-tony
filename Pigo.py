@@ -16,8 +16,7 @@ class Pigo:
               'rightspeed' : 175, 'dist': 100}
 
     def __init__(self):
-        print "I'm a little robot car. Beep beep."while MaterPi.stop():
-        MaterPi.checkDist()
+        print "I'm a little robot car. Beep beep."
         self.status['dist'] = us_dist(15)
 
     def stop(self):
