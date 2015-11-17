@@ -64,8 +64,8 @@ class Pigo:
 
     def servoSweep(self):
         for ang in range(20, 160, 5):
-                servo(ang)
-                time.sleep(.1)
+            servo(ang)
+            time.sleep(.1)
 
     def shakeServo(self):
         for x in range(10):
@@ -122,7 +122,7 @@ MaterPi = Pigo()
 while MaterPi.keepGoing():
     MaterPi.checkDist()
 ### Put the method call after MaterPi here in order to tell the robot what to do.
-    MaterPi.checkDist()
+    MaterPi.safeDrive()
     while MaterPi.keepGoing():
         MaterPi.checkDist()
     MaterPi.stop()
