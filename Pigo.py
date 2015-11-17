@@ -65,7 +65,7 @@ class Pigo:
     def servoSweep(self):
         for ang in range(20, 160, 5):
                 servo(ang)
-                time.sweep(.1)
+                time.sleep(.1)
 
     def shakeServo(self):
         for x in range(10):
