@@ -63,7 +63,7 @@ class Pigo:
         self.stop()
 
     def servoSweep(self):
-        for ang in range(20, 160, 5):
+        for ang in range(20, 140, 5):
                 servo(ang)
                 time.sleep(.1)
 
