@@ -31,6 +31,12 @@ class Pigo:
         for x in range(3):
             fwd()
 
+    def bwd(self):
+        self.status["ismoving"] = True
+        print "Let's back up."
+        for x in range(3):
+            bwd()
+
     # Check if the conditions are safe for the Pigo to continue
     def keepGoing(self):
         if self.status['dist'] < STOP_DIST:
@@ -47,7 +53,9 @@ class Pigo:
 
     def checkDist(self):
          self.status['dist'] = us_dist(15)
-         print "I see something" + str(self.status['dist']) + "mm away."
+         print "I see something " + str(self.status['dist']) + "mm away."
+
+
     #####
     ##### COMPLEX METHODS
     #####
@@ -77,15 +85,12 @@ class Pigo:
                 time.sleep(.1)
 
     def shuffle(self):
-        motor_fwd()
-        time.sleep(1)
-        motor_bwd()
-        time.sleep(1)
-        motor_fwd()
-        time.sleep(1)
-        motor_bwd()
-        time.sleep(1)
-        self.stop()
+        for x in range(3):
+            self.fwd()
+            time.sleep(.5)
+            self.bwd()
+            time.sleep(.5)
+            self.stop()
 
     def rturn(self):
         right()
@@ -104,13 +109,19 @@ class Pigo:
                 time.sleep(.1)
 
     def dance(self):
-        print "I just want to DANCE!"
+        print "I just want to spin!"
         self.spin()
+        print "I just want to shuffle!"
         self.shuffle()
+        print "I just want to shake my servo!"
         self.shakeServo()
+        print "I just want to turn right!"
         self.rturn()
+        print "I just want to turn left!"
         self.lturn()
+        print "I just want to blink!"
         self.blink()
+        print "I just want to shake my servo again!"
         self.shakeServo()
 
 
@@ -119,13 +130,7 @@ class Pigo:
     #####
 MaterPi = Pigo()
 
-while MaterPi.keepGoing():
-    MaterPi.checkDist()
-### Put the method call after MaterPi here in order to tell the robot what to do.
-    MaterPi.dance()
-    while MaterPi.keepGoing():
-        MaterPi.checkDist()
-    MaterPi.stop()
+MaterPi.dance()
 
 MaterPi.stop()
 
