@@ -21,7 +21,7 @@ class Pigo:
 
     def stop(self):
         self.status["ismoving"] = False
-        print "STOPPP."
+        print "Stopping."
         for x in range(3):
             stop()
 
@@ -61,7 +61,7 @@ class Pigo:
     #####
     def spin(self):
         right_rot()
-        time.sleep(3)
+        time.sleep(2)
         self.stop()
 
     def safeDrive(self):
@@ -93,17 +93,23 @@ class Pigo:
             self.stop()
 
     def rturn(self):
-        right()
+        for x in range(3):
+            right_rot()
+        time.sleep(1)
+        self.stop()
 
     def lturn(self):
-        left()
+        for x in range(3):
+            left_rot()
+        time.sleep(1)
+        self.stop()
 
     def blink(self):
         for x in range(10):
             if x % 2 == 0:
-                led_on()
+                led_on(1)
                 time.sleep(.1)
-                led_off()
+                led_off(1)
             else:
                 servo(20)
                 time.sleep(.1)
