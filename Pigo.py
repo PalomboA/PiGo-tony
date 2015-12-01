@@ -21,7 +21,7 @@ class Pigo:
 
     def stop(self):
         self.status["ismoving"] = False
-        print "STOPPP."
+        print "Stopping."
         for x in range(3):
             stop()
 
@@ -31,6 +31,7 @@ class Pigo:
         for x in range(3):
             fwd()
 
+<<<<<<< HEAD
     def check(self):
         vision = []
         for ang in range(20,160,2):
@@ -47,6 +48,13 @@ class Pigo:
             if counter == 20:
                 return ang
 
+=======
+    def bwd(self):
+        self.status["ismoving"] = True
+        print "Let's back up."
+        for x in range(3):
+            bwd()
+>>>>>>> 0b773f453bed8f22b0106803f252c1537a08e005
 
     # Check if the conditions are safe for the Pigo to continue
     def keepGoing(self):
@@ -64,14 +72,16 @@ class Pigo:
 
     def checkDist(self):
          self.status['dist'] = us_dist(15)
-         print "I see something" + str(self.status['dist']) + "mm away."
+         print "I see something " + str(self.status['dist']) + "mm away."
+
+
     #####
     ##### COMPLEX METHODS
     #####
 
     def spin(self):
         right_rot()
-        time.sleep(3)
+        time.sleep(2)
         self.stop()
 
     def safeDrive(self):
@@ -95,40 +105,49 @@ class Pigo:
                 time.sleep(.1)
 
     def shuffle(self):
-        motor_fwd()
-        time.sleep(1)
-        motor_bwd()
-        time.sleep(1)
-        motor_fwd()
-        time.sleep(1)
-        motor_bwd()
+        for x in range(3):
+            self.fwd()
+            time.sleep(.5)
+            self.bwd()
+            time.sleep(.5)
+            self.stop()
+
+    def rturn(self):
+        for x in range(3):
+            right_rot()
         time.sleep(1)
         self.stop()
 
-    def rturn(self):
-        right()
-
     def lturn(self):
-        left()
+        for x in range(3):
+            left_rot()
+        time.sleep(1)
+        self.stop()
 
     def blink(self):
         for x in range(10):
             if x % 2 == 0:
-                led_on()
+                led_on(1)
                 time.sleep(.1)
-                led_off()
+                led_off(1)
             else:
                 servo(20)
                 time.sleep(.1)
 
     def dance(self):
-        print "I just want to DANCE!"
+        print "I just want to spin!"
         self.spin()
+        print "I just want to shuffle!"
         self.shuffle()
+        print "I just want to shake my servo!"
         self.shakeServo()
+        print "I just want to turn right!"
         self.rturn()
+        print "I just want to turn left!"
         self.lturn()
+        print "I just want to blink!"
         self.blink()
+        print "I just want to shake my servo again!"
         self.shakeServo()
 
 
@@ -137,6 +156,7 @@ class Pigo:
     #####
 MaterPi = Pigo()
 
+<<<<<<< HEAD
 while MaterPi.keepGoing():
     MaterPi.checkDist()
 ### Put the method call after MaterPi here in order to tell the robot what to do.
@@ -144,6 +164,9 @@ while MaterPi.keepGoing():
     while MaterPi.keepGoing():
         MaterPi.checkDist()
     MaterPi.stop()
+=======
+MaterPi.dance()
+>>>>>>> 0b773f453bed8f22b0106803f252c1537a08e005
 
 MaterPi.stop()
 
