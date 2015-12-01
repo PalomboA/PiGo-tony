@@ -31,30 +31,11 @@ class Pigo:
         for x in range(3):
             fwd()
 
-<<<<<<< HEAD
-    def check(self):
-        vision = []
-        for ang in range(20,160,2):
-            servo(ang)
-            time.sleep(.1)
-            vision[ang] = us_dist(15)
-            counter = 0
-    def search(self):
-        for ang in range(20,160,2):
-            if vision[ang] > STOP_DIST:
-                counter += 1
-            else:
-                counter = 0
-            if counter == 20:
-                return ang
-
-=======
     def bwd(self):
         self.status["ismoving"] = True
         print "Let's back up."
         for x in range(3):
             bwd()
->>>>>>> 0b773f453bed8f22b0106803f252c1537a08e005
 
     # Check if the conditions are safe for the Pigo to continue
     def keepGoing(self):
@@ -156,7 +137,6 @@ class Pigo:
     #####
 MaterPi = Pigo()
 
-<<<<<<< HEAD
 while MaterPi.keepGoing():
     MaterPi.checkDist()
 ### Put the method call after MaterPi here in order to tell the robot what to do.
@@ -164,9 +144,8 @@ while MaterPi.keepGoing():
     while MaterPi.keepGoing():
         MaterPi.checkDist()
     MaterPi.stop()
-=======
+
 MaterPi.dance()
->>>>>>> 0b773f453bed8f22b0106803f252c1537a08e005
 
 MaterPi.stop()
 
