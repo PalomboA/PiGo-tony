@@ -153,7 +153,7 @@ MaterPi = Pigo()
 while MaterPi.keepGoing():
     MaterPi.checkDist()
 ### Put the method call after MaterPi here in order to tell the robot what to do.
-    MaterPi.safeDrive()
+    MaterPi.fwd()
     while MaterPi.keepGoing():
         MaterPi.checkDist()
     MaterPi.stop()
