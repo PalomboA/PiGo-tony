@@ -158,10 +158,6 @@ while MaterPi.keepGoing():
         MaterPi.checkDist()
     MaterPi.stop()
 
-MaterPi.dance()
-
-MaterPi.stop()
-
 
 
 
