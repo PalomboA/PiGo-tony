@@ -31,23 +31,6 @@ class Pigo:
         for x in range(3):
             fwd()
 
-    def check(self):
-        vision = []
-        for ang in range(20,160,2):
-            servo(ang)
-            time.sleep(.1)
-            vision[ang] = us_dist(15)
-            counter = 0
-    def search(self):
-        for ang in range(20,160,2):
-            if vision[ang] > STOP_DIST:
-                counter += 1
-            else:
-                counter = 0
-            if counter == 20:
-                return ang
-
-
     # Check if the conditions are safe for the Pigo to continue
     def keepGoing(self):
         if self.status['dist'] < STOP_DIST:
@@ -68,7 +51,6 @@ class Pigo:
     #####
     ##### COMPLEX METHODS
     #####
-
     def spin(self):
         right_rot()
         time.sleep(3)
@@ -140,10 +122,11 @@ MaterPi = Pigo()
 while MaterPi.keepGoing():
     MaterPi.checkDist()
 ### Put the method call after MaterPi here in order to tell the robot what to do.
-    MaterPi.safeDrive()
+    MaterPi.dance()
     while MaterPi.keepGoing():
         MaterPi.checkDist()
     MaterPi.stop()
 
 MaterPi.stop()
+
 
