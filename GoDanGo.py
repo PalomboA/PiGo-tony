@@ -302,9 +302,9 @@ def letsroll():
             print "Is that something in my way?"
         if stopcount > 2:
             print "Yup. Something's in my way."
-        while MaterPi.stop() == None:
-            print "Having trouble stopping"
-        break #stop the fwd loop
+            while MaterPi.stop() == None:
+             print "Having trouble stopping"
+            break #stop the fwd loop
 
 #HERE'S WHERE THE PROGRAM STARTS
 while voltcheck():#keep looping as long as the power is within acceptable range
