@@ -302,8 +302,8 @@ def letsroll():
             print "Is that something in my way?"
         if stopcount > 2:
             print "Yup. Something's in my way."
-            while MaterPi.stop() == None:
-             print "Having trouble stopping"
+        while MaterPi.stop() == None:
+            print "Having trouble stopping"
             break #stop the fwd loop
 
 #HERE'S WHERE THE PROGRAM STARTS
