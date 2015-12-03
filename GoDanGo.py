@@ -68,8 +68,8 @@ class Pigo:
 
     def checkDist(self):
         print "checkDist"
-         self.status['dist'] = us_dist(15)
-         print "I see something " + str(self.status['dist']) + "mm away."
+        self.status['dist'] = us_dist(15)
+        print "I see something " + str(self.status['dist']) + "mm away."
 
 
     #####
