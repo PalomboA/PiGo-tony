@@ -39,6 +39,7 @@ class Pigo:
             stop()
 
     def fwd(self):
+		print "Forward"
         self.status["ismoving"] = True
         print "Let's get going."
         for x in range(3):
@@ -52,6 +53,7 @@ class Pigo:
 
     # Check if the conditions are safe for the Pigo to continue
     def keepGoing(self):
+		print "keepGoing"
         if self.status['dist'] < STOP_DIST:
             print "I think I see something in the distance."
             self.checkDist()
@@ -60,11 +62,12 @@ class Pigo:
                 return False
         elif volt() > 14 or volt() < 6:
             print "Voltage outside of safe range." + str(volt())
-            return False
+			return False
         else:
             return True
 
     def checkDist(self):
+		print "checkDist"
          self.status['dist'] = us_dist(15)
          print "I see something " + str(self.status['dist']) + "mm away."
 
@@ -74,22 +77,26 @@ class Pigo:
     #####
 
     def spin(self):
+        print "spin"
         right_rot()
         time.sleep(2)
         self.stop()
 
     def safeDrive(self):
+        print "safeDrive"
         self.fwd()
         while self.keepGoing():
             self.checkDist()
         self.stop()
 
     def servoSweep(self):
+        print "servoSweep"
         for ang in range(20, 160, 5):
             servo(ang)
             time.sleep(.1)
 
     def shakeServo(self):
+        print "shakeServo"
         for x in range(10):
             if x % 2 == 0:
                 servo(120)
@@ -165,6 +172,7 @@ while MaterPi.keepGoing():
 
 
 def quickcheck():
+    print "quickCheck"
 	enable_servo()
 	servo(70)  #check the right edge of our forward path
 	time.sleep(.2) #pause so the sensor reading is more accurate
@@ -185,6 +193,7 @@ def quickcheck():
 		return False
 
 def crashcheck(counter):
+    print "crashcheck"
 	if counter % 10 == 0:
 		servo(140)
 		time.sleep(.4)
@@ -203,6 +212,7 @@ def crashcheck(counter):
 		return True
 
 def scan():
+    print "scan"
 	while stop() == 0:  #bot sometimes doesn't stop, so I loop the command until it returns a 1 for completed
 		print "Having trouble stopping"
 		time.sleep(.1)
@@ -220,7 +230,8 @@ def scan():
 	disable_servo()
 	return allclear
 
-def turnto(ang):   #first calculate whether to use a low/med/high turn, then execute the turn
+def turnto(ang):
+   print "turnto"  #first calculate whether to use a low/med/high turn, then execute the turn
 	while stop() == None:  #stop loop to prepare for turn
 			print "Having trouble stopping"
 	diff = 80 - (ang-10)  #for some reason, 80 degrees is straight ahead with my servo. I take off 10 from ang to find the center of the window
@@ -249,6 +260,7 @@ def turnto(ang):   #first calculate whether to use a low/med/high turn, then exe
 		print "Having trouble stopping"
 
 def voltcheck():  #this check runs at the top of the main while loop
+	print "voltcheck"
 	if volt() < 7:
 		print "Not enough power"
 		return False
@@ -260,6 +272,7 @@ def voltcheck():  #this check runs at the top of the main while loop
 		return True
 
 def turnaround():
+    print "turnaround"
 	while stop() == None:
 		print "Having trouble stopping"
 	print "Backing up. Beep beep beep."
@@ -275,6 +288,7 @@ def turnaround():
 		print "Having trouble stopping"
 
 def letsroll():
+    print "letsroll"
 	stopcount = 0 #avoids false stops by having to detect an obstacle multiple times
 	counter = 0 #used for crashcheck, so we only check for corners every 5 counts
 	print "Let's roll."   #always good to print messages so you can debug easier
@@ -293,7 +307,7 @@ def letsroll():
 			break #stop the fwd loop
 
 #HERE'S WHERE THE PROGRAM STARTS
-while voltcheck():  #keep looping as long as the power is within acceptable range
+while voltcheck():#keep looping as long as the power is within acceptable range
 	if scan() == True:   #Call the scan and if allclear returns positive, let's roll
 		letsroll()
 	else:   #here's where we find a safe window to drive forward
