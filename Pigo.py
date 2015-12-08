@@ -137,10 +137,12 @@ class Pigo:
         print "I just want to shake my servo again!"
         self.shakeServo()
 
+
+
     def isThereOpening(self):
         counter = 0
         for ang in range(20, 160, 5):
-            if self.servoSweep[angle] > STOP_DIST:
+            if self.vision[ang] > STOP_DIST:
                 counter += 1
             else:
                 counter = 0
@@ -170,6 +172,7 @@ class Pigo:
         time.sleep(1)  #MAY NEED ADJUSTING
         self.stop()
 
+
     def findAngle(self):
         for ang in range(20, 160, 5):
         angle = 80
@@ -187,7 +190,7 @@ while True:
         mater.safeDrive()
     else:
         mater.servoSweep()
-        if mater.isThereOpening():
-            mater.turnTo(mater.findAngle())
+        if mater.isThereOpening:
+            mater.turnTo(mater.findAngle)
         else:
             mater.turnAround()
