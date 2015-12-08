@@ -175,7 +175,7 @@ class Pigo:
 
     def findAngle(self):
         for ang in range(20, 160, 5):
-        angle = 80
+            angle = 80
         return angle
 
 
