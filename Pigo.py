@@ -153,7 +153,7 @@ class Pigo:
     def turnTo(self, angle):
         turn = .5  #MAY NEED ADJUSTING
         TURN = 1   #MAY NEED ADJUSTING
-        if angle > 120 or angle < 50
+        if angle > 120 or angle < 50:
             turn = TURN
         if angle < 80:
             print "We're turning right"
