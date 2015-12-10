@@ -151,13 +151,13 @@ class Pigo:
         return False
 
     def turnTo(self, angle):
-        turn = .5  #MAY NEED ADJUSTING
+        turn = .25  #MAY NEED ADJUSTING
         print "Turning a small angle."
-        TURN = 1   #MAY NEED ADJUSTING
+        TURN = .5   #MAY NEED ADJUSTING
         print "Turning a large angle."
         if angle > 120 or angle < 50:
             turn = TURN
-        if angle > 80:
+        if angle < 80:
             print "We're turning right"
             self.rturn()
             time.sleep(turn)
