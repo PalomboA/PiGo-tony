@@ -177,9 +177,37 @@ class Pigo:
 
 
     def findAngle(self):
-        for ang in range(20, 160, 5):
-            angle = 80
-        return angle
+        counter = 0
+        option = [0] * 12 #we're going to fill this array with the angles of open paths
+        optindex = 0  #this starts at 0 and will increase every time we find an option
+        for ang in range(20, 160, self.STEPPER):
+            if self.vision[ang] > STOP_DIST:
+                counter += 1
+            else:
+                counter = 0
+            if counter >= (20/self.STEPPER):
+                print "We've found an option at angle " + str(ang - 10)
+                option[optindex] = (ang - 10)
+                counter = 0
+                optindex += 1
+        if self.status['wentleft']:
+            print "I went left last time. Seeing if I have a right turn option"
+            for choice in option:
+                if choice < 90:
+                    self.status['wentleft'] = False #switch this for next time
+                    return choice
+        else:
+            print "Went right last time. Seeing if there's a left turn option"
+            for choice in option:
+                if choice > 90:
+                    self.status['wentleft'] = True
+                    return choice
+        print "I couldn't turn the direction I wanted. Goint to use angle " + str(option[0])
+        if option[0] != 0: #let's make sure there's something in there
+            return option[0]
+        print "If I print this line I couldn't find an angle. How'd I get this far?"
+        return 90
+
 
 
 
