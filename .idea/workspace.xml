@@ -31,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Pigo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pigo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pigo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20212767">
+            <state vertical-scroll-proportion="0.0">
               <caret line="155" column="17" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
               <folding>
                 <element signature="e#133#153#0" expanded="true" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GoDanGo.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GoDanGo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GoDanGo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="261" column="14" selection-start-line="261" selection-start-column="14" selection-end-line="261" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.9361702">
+              <caret line="334" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -97,8 +97,8 @@
         <option value="$PROJECT_DIR$/allstop.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Dance.py" />
-        <option value="$PROJECT_DIR$/GoDanGo.py" />
         <option value="$PROJECT_DIR$/Pigo.py" />
+        <option value="$PROJECT_DIR$/GoDanGo.py" />
       </list>
     </option>
   </component>
@@ -882,12 +882,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoDanGo.py">
+    <entry file="file://$PROJECT_DIR$/Pigo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="261" column="14" selection-start-line="261" selection-start-column="14" selection-end-line="261" selection-end-column="14" />
+          <caret line="155" column="17" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#133#153#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -900,22 +900,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pigo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20212767">
-          <caret line="155" column="17" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
-          <folding>
-            <element signature="e#133#153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dance.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding>
             <element signature="e#133#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoDanGo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9361702">
+          <caret line="334" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
