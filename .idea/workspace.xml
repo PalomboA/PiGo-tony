@@ -34,8 +34,8 @@
       <file leaf-file-name="Pigo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pigo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71276593">
-              <caret line="174" column="24" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.32978722">
+              <caret line="159" column="18" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
               <folding>
                 <element signature="e#133#153#0" expanded="true" />
               </folding>
@@ -110,8 +110,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="95" />
-    <option name="y" value="143" />
+    <option name="x" value="65" />
+    <option name="y" value="41" />
     <option name="width" value="1345" />
     <option name="height" value="785" />
   </component>
@@ -413,7 +413,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="95" y="143" width="1345" height="785" extended-state="0" />
+    <frame x="65" y="41" width="1345" height="785" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1208622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -902,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pigo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71276593">
-          <caret line="174" column="24" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.32978722">
+          <caret line="159" column="18" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
           <folding>
             <element signature="e#133#153#0" expanded="true" />
           </folding>
